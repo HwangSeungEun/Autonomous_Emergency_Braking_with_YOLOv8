@@ -97,7 +97,7 @@
 1. In the **Open** box, type "dxdiag".
 1. CPU and windows specs
 
-<img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/c517b6b0-70af-4b6d-a257-8db056f97315" alt="image" style="zoom: 67%;" /><img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/4d9047af-b085-4443-bd1a-aef0c9e5d7b2" alt="image" style="zoom: 80%;" /><img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/6a4772f5-4322-4f4d-a5f9-dfc2a1096c57" alt="image" style="zoom:67%;" />
+![image](https://github.com/HanMinung/NumericalProgramming/assets/99113269/8faeb432-8129-4698-9070-6fd086aaac2d)
 
 4. Check user's GPU specs
 5. Go to the link below and proceed with the installation. Select the specifications of the computer checked above
@@ -110,7 +110,7 @@
    nvidia -smi (in cmd terminal)
    ```
 
-   <img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/4695e94c-8be1-489b-a5b7-c259dbcf6b2c" alt="image" style="zoom:67%;" /><img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/a8b93a31-1461-42d8-b939-29b2e0c87966" alt="image" style="zoom:67%;" /><img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/9df6d293-810e-4f5f-ba72-ef370be83ac8" alt="image" style="zoom:67%;" />
+   ![image](https://github.com/HanMinung/NumericalProgramming/assets/99113269/74844397-7f24-4c02-91ed-0cbda9b23b2a)
 
 ​        
 
@@ -123,7 +123,7 @@
 nvcc -V   or  nvcc --version  (in cmd terminal)
 ```
 
-​                                           <img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/1081e94b-23e7-44d1-bdb8-ca64610c8c75" alt="image" style="zoom:67%;" /><img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/f8fa1885-51cb-4190-8ad0-7c37fedbee63" alt="image" style="zoom:67%;" />
+​                                           ![image](https://github.com/HanMinung/NumericalProgramming/assets/99113269/e26b0235-3349-4005-8054-1bb2b614eba5)
 
 
 
@@ -141,7 +141,7 @@ nvcc -V   or  nvcc --version  (in cmd terminal)
 
 - Select the bottom path in Environment Variables and enter Edit
 
-​                                                            <img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/b9228b8b-38c7-44c4-9c50-c4465c880a94" alt="image" style="zoom:67%;" /><img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/e98a3056-348e-456d-8250-cd9418f9f66a" alt="image" style="zoom:67%;" /><img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/3db20ad1-d16e-42b3-ab2e-8fddde8be001" alt="image" style="zoom:67%;" />
+​                                                            ![image](https://github.com/HanMinung/NumericalProgramming/assets/99113269/564f3ab9-903e-4935-82f8-2cd6d7e858d2)
 
 
 
@@ -243,9 +243,9 @@ To enhance the speed of OpenCV operations, we built OpenCV for GPU usage by empl
 
 * The world coordinate systems of lidar and the camera are defined differently. For instance, as evident from the above Figure, the world coordinate system of the camera defines depth information along the z-axis, whereas lidar sensor defines depth information along the x-axis. Therefore, when defining the rotation matrix, it is necessary to first unify the coordinate axes that are defined differently. 
 
-​                                       <img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/48582bec-b3f3-4e8a-ac2a-ecc2d8e53b28" alt="image" style="zoom:40%;" />
+​                                                        <img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/8b6a7fb2-9f44-44e0-a3b0-0a691c87dd65" alt="image" style="zoom:67%;" />
 
-<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/61e07d2f-00f1-4a43-8178-56a1ee29393c" alt="image" style="zoom: 50%;" />
+
 
 * The matrix R is a 3x3 matrix that accounts for the difference in orientation between the two sensors and provides the necessary calibration. The matrix T, on the other hand, is a 3x1 matrix that considers the physical displacement between the two sensors and provides the corresponding calibration. As for the intrinsic parameter matrix mentioned earlier, it represents the distortion correction matrix specific to the camera itself. Ultimately, the most crucial part of the calibration process is accurately determining the Extrinsic matrix (R|t), which takes into account the positional and rotational differences between the two sensors. In the case of the camera sensor, it is not facing directly forward but rather angled approximately 20 degrees below the front-facing position. Therefore, the alpha value, required to compute the rotation matrix, is set to the converted radian value of 110 degrees. As there is no deviation in the left-right orientation between the two sensors, the Beta and Gamma values can be set to 0 for the calibration process. Python code that calculates extrinsic matrix was made like below.
 
@@ -298,7 +298,7 @@ To enhance the speed of OpenCV operations, we built OpenCV for GPU usage by empl
 
 Through this entire process, the actual coordinates of the lidar are transformed into the image pixel coordinates of the camera. The figure below shows the results of projecting the 2D lidar's horizontal points onto the camera's normalized coordinate system (converted to pixel coordinates). The yellow dots represent the projected results of the lidar's actual normalized coordinate system.
 
-<img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/46458191-d801-4003-9b31-4adcb779e3e1" alt="image" style="zoom:67%;" />
+![image](https://github.com/HanMinung/NumericalProgramming/assets/99113269/4a5ab6d6-ad86-46ff-86c0-605267d87366)
 
 
 
@@ -312,7 +312,7 @@ If you don't have a roboflow ID, go to [this link](https://roboflow.com/) to sig
 
 
 
-![image](https://github.com/HwangSeungEun/hada_camera/assets/91474647/e9e0a127-dd78-4be8-9cef-31d671e9d067)
+<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/e9e0a127-dd78-4be8-9cef-31d671e9d067" alt="image" style="zoom: 40%;" />
 
 
 
@@ -320,9 +320,9 @@ After selecting a file, select an image to be used for labeling work.
 
 In the video to be used, it is recommended not to use images that are ambiguous to label because there are as many objects as possible or too many objects.
 
-- a good source(left), a bad source (right)
+- a good source to use (left), a bad source to use (right)
 
-![image](https://github.com/HwangSeungEun/hada_camera/assets/91474647/e5172a0a-b3df-4be8-95b9-bf577d950bb3)
+<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/e5172a0a-b3df-4be8-95b9-bf577d950bb3" alt="image" style="zoom:50%;" />
 
 
 
@@ -336,11 +336,11 @@ If the labeling work is completed as follows, proceed with data augmentation. By
 
 
 
-<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/dd90f99c-52e2-4e2c-b524-e74faceef141" alt="image" style="zoom:67%;" />
+<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/dd90f99c-52e2-4e2c-b524-e74faceef141" alt="image" style="zoom:55%;" />
 
 When data augmentation is completed, export data set is carried out. Dataset proceeds in the form of downloading from jupyter, so you can choose as follows. And you can paste the code shown below.
 
-![image](https://github.com/HwangSeungEun/hada_camera/assets/91474647/2d4fbaac-7e3d-48c2-b275-9d7c5e0e3af4)
+<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/2d4fbaac-7e3d-48c2-b275-9d7c5e0e3af4" alt="image" style="zoom:50%;" />
 
 
 
@@ -378,7 +378,7 @@ By utilizing engine weights that can be computed with TensorRT, YOLO v8 signific
 
 Lastly, YOLO v8 facilitates learning through segmentation. Unlike bounding boxes, segmentation allows learning of the object exclusively, without the background. This contributes to increased accuracy and stable object recognition.
 
-<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/c7654840-8b10-4405-a7c9-b70f8af95586" alt="image" style="zoom:150%;" />
+<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/c7654840-8b10-4405-a7c9-b70f8af95586" alt="image" style="zoom: 50%;" />
 
 
 
@@ -386,9 +386,9 @@ Lastly, YOLO v8 facilitates learning through segmentation. Unlike bounding boxes
 
 The performance metrics indicate that YOLO v5 exhibits an accuracy between 0.78 to 0.82 with a fluctuating size of the bounding box. In contrast, YOLO v8 consistently outputs a bounding box of constant size and achieves an accuracy ranging from 0.94 to 0.96.
 
-[video link](https://youtu.be/zHC-5-EBTKA)
+video link : [click here](https://youtu.be/zHC-5-EBTKA)
 
-<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/433d7072-7ac0-4b4f-b59f-b5d84929d312" alt="image" style="zoom: 50%;" />
+<img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/b25072bd-ef18-45d2-851c-567438c00963" alt="image" style="zoom:67%;" />
 
 <img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/010f574f-0646-4a07-85f3-b327f8728040" alt="image"  />
 
@@ -482,7 +482,7 @@ The results of the experiment are presented in Section 4: Results. When the expe
 
 Demo video link : [click here](https://youtu.be/E1y1upZiMnY)
 
-[![Emergency braking system](http://img.youtube.com/vi/Zah9VBC8uuM/0.jpg)](https://www.youtube.com/watch?v=Zah9VBC8uuM) 
+[![Emergency braking system](http://img.youtube.com/vi/E1y1upZiMnY/0.jpg)](https://www.youtube.com/watch?v=E1y1upZiMnY) 
 
 
 
