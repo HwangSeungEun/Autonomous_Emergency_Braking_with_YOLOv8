@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['b_rub', 'y_rub']
+
+roboflow:
+  workspace: hada
+  project: hada_segment
+  version: 6
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/hada/hada_segment/dataset/6

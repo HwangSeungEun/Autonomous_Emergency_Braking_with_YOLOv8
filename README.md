@@ -306,13 +306,51 @@ Through this entire process, the actual coordinates of the lidar are transformed
 
 #### 3.7.1 Custom dataset
 
+Train data was annotated by uploading the video taken directly to the roboflow.
+
+If you don't have a roboflow ID, go to [this link](https://roboflow.com/) to sign up and create a new project. Determine the type of object recognition in the project. If you select an instance segment, you can produce an annotation made of polyline. Simply write down which object it recognizes, name the project, and create a project.
 
 
 
+![image](https://github.com/HwangSeungEun/hada_camera/assets/91474647/e9e0a127-dd78-4be8-9cef-31d671e9d067)
 
 
 
-#### 3.7.2 YOLO v5 and YOLO v8
+After selecting a file, select an image to be used for labeling work.
+
+In the video to be used, it is recommended not to use images that are ambiguous to label because there are as many objects as possible or too many objects.
+
+- a good source(left), a bad source (right)
+
+![image](https://github.com/HwangSeungEun/hada_camera/assets/91474647/e5172a0a-b3df-4be8-95b9-bf577d950bb3)
+
+
+
+For labeling, segment annotation is performed using smart polygon
+
+<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/c52523e1-88a3-4bf4-9aa6-2a58de0131b9" alt="image" style="zoom: 50%;" />
+
+
+
+If the labeling work is completed as follows, proceed with data augmentation. By bending the same image, it looks like a picture of various environments, so you can create a dataset that becomes stronger against disturbance.
+
+
+
+<img src="https://github.com/HwangSeungEun/hada_camera/assets/91474647/dd90f99c-52e2-4e2c-b524-e74faceef141" alt="image" style="zoom:67%;" />
+
+When data augmentation is completed, export data set is carried out. Dataset proceeds in the form of downloading from jupyter, so you can choose as follows. And you can paste the code shown below.
+
+![image](https://github.com/HwangSeungEun/hada_camera/assets/91474647/2d4fbaac-7e3d-48c2-b275-9d7c5e0e3af4)
+
+
+
+It is convenient to use a Jupiter laptop for learning. The code is placed in the source file.
+
+When object recognition is performed, **yolov8_rubber.py** can be executed. I couldn't upload the lidar interface code, so I posted an example of a code to communicate with lidar. Running **sm_lidar.py** crosses the coordinates of the focus of object recognition through yolo.
+
+
+
+#### 3.7.2 Why YOLO v8?
 
 - **YOLO v5 Methodology**
 
@@ -363,14 +401,6 @@ Transfer learning was utilized during the model training process. We used a pret
 All learning process has been completed through transfer learning, and since one of the most important elements of this project is accurate object detection, performance evaluation is essential. Using the learned model, the environment and the location of the rubber cone were different 100 times to evaluate the recognition rate of the rubber cone. The evaluation results for this are as follows. It has been confirmed that 98 out of 100 times of recognition is accurate, and 2 times of recognition is incorrect or disconnected from time to time, and that the problem occurs mainly in dark environments.		
 
 <img src="https://github.com/HanMinung/NumericalProgramming/assets/99113269/3e4d70e0-0ada-49a4-b590-36dbc2333556" alt="image"  />
-
-
-
-#### 3.7.5 Train with YOLO v8
-
-Using jupyter notebook is more convenient. This code is write at appendix.
-
-If you want to check the camera part send middle points of rubber cone, execute **sm_lidar.py** with **yolov8_rubber.py**
 
 
 
