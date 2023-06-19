@@ -49,7 +49,7 @@ user_font    = {0   : cv2.FONT_HERSHEY_COMPLEX,
 sm_name = "HADA3_CAM"
 print("start...")
 shared_memory_name = "HADA3_CAM"
-shm_size = 6 * 2 * 4  # (int int) * 6개 
+shm_size = 6 * 2 * 4  # (int int) * 6개 = 12개
 shm = shared_memory.SharedMemory(name=shared_memory_name, create=True, size=shm_size)
 print("sm memory is open...")
 
