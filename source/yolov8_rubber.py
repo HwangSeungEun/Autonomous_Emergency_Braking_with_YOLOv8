@@ -20,7 +20,7 @@ from   datetime    import datetime
 # sys.path.append('D:\HADA\HADA_3rd\Camera\yolov8')
 # model = YOLO('seg_0514.pt')
 # weight_path = 'D:\HADA\HADA_3rd\Camera\yolov8\\runs\segment\\train7\weights\\best.engine'
-weight_path = 'runs\segment\\best.pt'
+weight_path = 'runs\segment\\demo.pt'
 model = YOLO(weight_path)
 
 my_cam_index = 0 
